@@ -1,0 +1,10 @@
+nodes:
+    prod:
+        type: mongo
+        uri: ${MONGODBPROD}
+    dev:
+        type: mongo
+        uri: ${MONGODBDEV}
+    debug:
+        type: file
+        uri: stdout://
