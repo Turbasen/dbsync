@@ -1,8 +1,10 @@
-FROM golang
-MAINTAINER Hans Kristian Flaatten <hans.kristian.flaatten@turistforeningen.no>
+FROM starefossen/transporter:0.1
+MAINTAINER Hans Kristian Flaatten <hans.kristian.flaatten@dnt.no>
 
-RUN go-wrapper download github.com/compose/transporter/...
-RUN go-wrapper install github.com/compose/transporter/...
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
-COPY config.yml /go/config.yml
-COPY sync.js /go/sync.js
+COPY config.yml /usr/src/app
+COPY sync.js /usr/src/app
+
+CMD ["run", "--config", "config.yml", "sync.js"]

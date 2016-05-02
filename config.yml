@@ -2,6 +2,7 @@ nodes:
     prod:
         type: mongo
         uri: ${MONGODBPROD}
+        tail: true
     dev:
         type: mongo
         uri: ${MONGODBDEV}

@@ -2,7 +2,4 @@ sync:
     build: .
     env_file: .env
     volumes:
-        - config.yml:/go/config.yml
-        - sync.js:/go/sync.js
-        - log.js:/go/log.js
-    command: transporter run --config config.yml sync.js
+        - .:/usr/src/app
